@@ -1,10 +1,10 @@
 <?php
 
-    $to = "backpiper.com@gmail.com";
+    $to = "taylorowenskees@outlook.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $headers = "From: $from";
-    $subject = "You have a message from your BizPro";
+    $subject = "New message from your portfolio site";
 
     $fields = array();
     $fields{"Fname"}    = "First Name";
@@ -14,7 +14,7 @@
     $fields{"message"}   = "Message";
     
 
-    $body = "Here is the message you got:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n",$b,$_REQUEST[$a]); }
+    $body = "Please see the folowing message:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n",$b,$_REQUEST[$a]); }
 
     $send = mail($to, $subject, $body, $headers);
 
